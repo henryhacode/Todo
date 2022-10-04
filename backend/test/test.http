@@ -1,0 +1,34 @@
+@hostname = localhost
+@port = 5000
+@basicUrl = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+###
+GET {{basicUrl}}/todos
+
+###
+GET {{basicUrl}}/todos/1
+
+###
+POST {{basicUrl}}/todos
+Content-Type: {{contentType}}
+
+{
+  "cat": "Study",
+  "name": "Do Homework",
+  "by": "10/03/2022",
+  "status": "Doing"
+}
+
+###
+POST {{basicUrl}}/todos
+Content-Type: {{contentType}}
+
+{
+  "cat": "Study",
+  "name": "Create test case",
+  "by": "10/03/2022",
+  "status": "Done"
+}
+###
+DELETE {{basicUrl}}/todos/1
